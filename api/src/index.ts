@@ -8,7 +8,7 @@ const PORT = process.env.port ? process.env.port : 3001;
 
 app.use(express.json());
 
-app.post(`/api/user`, async (req, res) => {
+app.post(`/user`, async (req, res) => {
   const result = await prisma.user.create({
     data: {
       email: req.body.email,
@@ -18,7 +18,7 @@ app.post(`/api/user`, async (req, res) => {
   res.json(result);
 });
 
-app.get('/api/users', async (_, res) => {
+app.get('/users', async (_, res) => {
   const result = await prisma.user.findMany();
   res.json(result);
 });

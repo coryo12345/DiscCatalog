@@ -16,7 +16,7 @@ export const mutations = {
 
 export const actions = {
   loadUsers({ commit }) {
-    this.$axios.$get('/users')
+    this.$axios.$get('/api/users')
       .then(resp => commit('SET_USERS', resp));
   }
 }

@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     addUser() {
-      this.$axios.$post('/user', {
+      this.$axios.$post('/api/user', {
         name: this.name,
         email: this.email,
       });
