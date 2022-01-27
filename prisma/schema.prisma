@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int              @id @default(autoincrement())
+  name         String?
+  email        String           @unique
+  // role         Role             @default(USER)
+  discs        Disc[]
+  profile      UserProfile?
+}
+
+model UserProfile {
+  id     Int        @id @default(autoincrement())
+  userId Int?       @unique
+  bio    String?
+  User   User?      @relation(fields: [userId], references: [id])
+}
+
+model Disc {
+  id          Int         @id @default(autoincrement())
+  brand       String?
+  mold        String?
+  plastic     String?
+  weight      Int?
+  run         String?
+  foil        String?
+  stamp       String?
+  color       String?
+  userId      Int?
+  User        User?       @relation(fields: [userId], references: [id])
+}
+
+// TODO Enable when switching to postgres
+// enum Role {
+//   USER
+//   ADMIn
+// }

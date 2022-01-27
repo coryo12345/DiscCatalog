@@ -59,12 +59,12 @@ export default {
         {
           icon: 'mdi-briefcase',
           title: 'Discs',
-          to: '/inspire',
+          to: '/discs',
         },
         {
           icon: 'mdi-account',
           title: 'Account',
-          to: '/inspire',
+          to: '/account',
         },
       ],
       miniVariant: false,
