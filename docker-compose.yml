@@ -1,0 +1,12 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    # todo
+
+  files:
+    image: minio
+    # todo
+
+  # app
+  # api
