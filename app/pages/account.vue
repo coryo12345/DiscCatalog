@@ -42,7 +42,7 @@ export default {
       users: 'getUsers',
     }),
   },
-  mounted() {
+  created() {
     this.$store.dispatch('loadUsers');
   },
   methods: {
