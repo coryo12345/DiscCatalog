@@ -28,6 +28,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { URLS } from '@/constants/'
 
 export default {
   name: 'AccountPage',
@@ -43,15 +44,15 @@ export default {
     }),
   },
   created() {
-    this.$store.dispatch('loadUsers');
+    this.$store.dispatch('loadUsers')
   },
   methods: {
     async addUser() {
-      await this.$axios.$post('/api/user/create', {
+      await this.$axios.$post(URLS.CREATE_USER, {
         name: this.name,
         email: this.email,
-      });
-      this.$store.dispatch('loadUsers');
+      })
+      this.$store.dispatch('loadUsers')
     },
   },
 }

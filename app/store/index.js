@@ -1,3 +1,4 @@
+import { URLS } from '@/constants/';
 // TODO namespaced store
 
 export const state = () => ({
@@ -36,18 +37,18 @@ export const mutations = {
 
 export const actions = {
   loadUsers({ commit }) {
-    this.$axios.$get('/api/user/users')
+    this.$axios.$get(URLS.GET_USERS)
       .then(resp => commit('SET_USERS', resp));
   },
 
   loadDiscs({ commit }) {
-    this.$axios.$get('/api/disc/discs')
+    this.$axios.$get(URLS.GET_DISCS)
       .then(resp => commit('SET_DISCS', resp));
   },
 
   loadStores({ state, commit }) {
     if (!state.stores.length) {
-      this.$axios.$get('/api/store/stores')
+      this.$axios.$get(URLS.GET_STORES)
       .then(resp => commit('SET_STORES', resp));
     }
   }
