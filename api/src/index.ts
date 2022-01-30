@@ -43,6 +43,8 @@ const PORT = process.env.port ? process.env.port : 3001;
 
 app.use(express.json());
 
+// TODO use express router
+
 app.post(`/api/user`, async (req, res) => {
   const result = await prisma.user.create({
     data: {
@@ -62,5 +64,10 @@ app.get('/api/discs', async (_, res) => {
   const result = await prisma.disc.findMany();
   res.json(result);
 });
+
+app.get('/api/stores', async (_, res) => {
+  const result = await prisma.store.findMany();
+  res.json(result);
+})
 
 app.listen(PORT, () => console.log(`API Listening on port ${PORT}`));

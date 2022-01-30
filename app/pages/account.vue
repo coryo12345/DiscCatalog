@@ -5,15 +5,15 @@
         <h1>Account</h1>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row align="center">
       <v-col>
-        <v-text-field v-model="name" placeholder="Name" solo />
+        <v-text-field v-model="name" hide-details placeholder="Name" solo />
       </v-col>
       <v-col>
-        <v-text-field v-model="email" placeholder="Email" solo />
+        <v-text-field v-model="email" hide-details placeholder="Email" solo />
       </v-col>
       <v-col>
-        <v-btn @click="addUser">Add</v-btn>
+        <v-btn large color="primary" @click="addUser">Add</v-btn>
       </v-col>
     </v-row>
     <v-row>

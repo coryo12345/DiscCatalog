@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <h1>Discs</h1>
+        <h1>My Discs</h1>
       </v-col>
     </v-row>
     <v-row>
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-// import DiscCard from '../components/DiscCard.vue';
 import { mapGetters } from 'vuex'
 
 export default {

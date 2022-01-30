@@ -1,12 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      :fixed="fixed"
-      app
-    >
+    <v-navigation-drawer v-model="drawer" :clipped="clipped" :fixed="fixed" app>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -24,12 +18,9 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar :clipped-left="clipped" fixed app color="primary">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title class="text--text" v-text="title" />
     </v-app-bar>
     <v-main>
       <v-container>
@@ -57,8 +48,13 @@ export default {
           to: '/',
         },
         {
+          icon: 'mdi-cart',
+          title: 'Stores',
+          to: '/stores',
+        },
+        {
           icon: 'mdi-briefcase',
-          title: 'Discs',
+          title: 'My Discs',
           to: '/discs',
         },
         {
@@ -67,10 +63,15 @@ export default {
           to: '/account',
         },
       ],
-      miniVariant: false,
       right: true,
       title: 'DiscCatalog',
     }
   },
 }
 </script>
+
+<style scoped>
+header button span.v-btn__content i.v-icon {
+  color: var(--v-text-base);
+}
+</style>
