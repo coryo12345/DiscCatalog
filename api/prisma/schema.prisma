@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -14,7 +14,7 @@ model User {
   id           Int              @id @default(autoincrement())
   name         String?
   email        String           @unique
-  // role         Role             @default(USER)
+  role         Role             @default(USER)
   discs        Disc[]
   profile      UserProfile?
 }
@@ -40,8 +40,20 @@ model Disc {
   User        User?       @relation(fields: [userId], references: [id])
 }
 
-// TODO Enable when switching to postgres
-// enum Role {
-//   USER
-//   ADMIn
-// }
+model Store {
+  id            Int         @id @default(autoincrement())
+  display_name  String
+  link          String
+  store_type    StoreType
+}
+
+enum Role {
+  USER
+  ADMIn
+}
+
+enum StoreType {
+  FACTORY
+  RETAILER
+  PLAYER
+}

@@ -6,9 +6,6 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "prisma:migrateDev": "prisma migrate dev",
-    "prisma:migrateProd": "prisma migrate deploy",
-    "prisma:dbpull": "prisma db pull",
     "prisma:generate": "prisma generate",
     "lint:js": "eslint --ext \".js,.ts\" --ignore-path .prettierignore .",
     "lint:prettier": "prettier --check .",

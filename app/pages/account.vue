@@ -46,8 +46,8 @@ export default {
     this.$store.dispatch('loadUsers');
   },
   methods: {
-    addUser() {
-      this.$axios.$post('/api/user', {
+    async addUser() {
+      await this.$axios.$post('/api/user', {
         name: this.name,
         email: this.email,
       });
