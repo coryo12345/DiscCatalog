@@ -36,18 +36,18 @@ export const mutations = {
 
 export const actions = {
   loadUsers({ commit }) {
-    this.$axios.$get('/api/users')
+    this.$axios.$get('/api/user/users')
       .then(resp => commit('SET_USERS', resp));
   },
 
   loadDiscs({ commit }) {
-    this.$axios.$get('/api/discs')
+    this.$axios.$get('/api/disc/discs')
       .then(resp => commit('SET_DISCS', resp));
   },
 
   loadStores({ state, commit }) {
     if (!state.stores.length) {
-      this.$axios.$get('/api/stores')
+      this.$axios.$get('/api/store/stores')
       .then(resp => commit('SET_STORES', resp));
     }
   }

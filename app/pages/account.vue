@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     async addUser() {
-      await this.$axios.$post('/api/user', {
+      await this.$axios.$post('/api/user/create', {
         name: this.name,
         email: this.email,
       });
