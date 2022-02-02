@@ -62,6 +62,10 @@ export default {
           title: 'Account',
           to: '/account',
         },
+        {
+          title: 'Auth',
+          to: '/auth',
+        },
       ],
       right: true,
       title: 'DiscCatalog',

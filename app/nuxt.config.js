@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import env from './env'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -38,8 +39,27 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    '@nuxtjs/auth-next'
   ],
+
+  auth: {
+    localStorage: true,
+    strategies: {
+      local: false,
+      auth0: {
+        domain: env.DOMAIN,
+        clientId: env.CLIENT_ID,
+        audience: env.AUDIENCE,
+      }
+    },
+    redirect: {
+      login: '/auth',
+      logout: '/',
+      callback: '/auth',
+      home: '/'
+    }
+  },
 
   axios: {
     proxy: true
