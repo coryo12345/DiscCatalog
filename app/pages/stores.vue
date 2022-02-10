@@ -30,7 +30,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col v-for="(store, index) in manufacturers" :key="index" cols="auto">
+        <v-col v-for="(store, index) in manufacturers" :key="index" class="my-2" cols="auto">
           <a :href="store.link" target="_blank" class="store-card text--text">{{
             store.display_name
           }}</a>
@@ -44,7 +44,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col v-for="(store, index) in retailers" :key="index" cols="auto">
+        <v-col v-for="(store, index) in retailers" :key="index" class="my-2" cols="auto">
           <a :href="store.link" target="_blank" class="store-card text--text">{{
             store.display_name
           }}</a>
@@ -58,7 +58,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col v-for="(store, index) in players" :key="index" cols="auto">
+        <v-col v-for="(store, index) in players" :key="index" class="my-2" cols="auto">
           <a :href="store.link" target="_blank" class="store-card text--text">{{
             store.display_name
           }}</a>

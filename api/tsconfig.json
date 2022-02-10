@@ -6,6 +6,6 @@
     "lib": ["esnext"],
     "esModuleInterop": false
   },
-  "include": ["**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["dist"]
 }

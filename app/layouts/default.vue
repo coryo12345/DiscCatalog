@@ -21,6 +21,7 @@
     <v-app-bar :clipped-left="clipped" fixed app color="primary">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title class="text--text" v-text="title" />
+      <HeaderLogin class="my-auto ml-auto" />
     </v-app-bar>
     <v-main>
       <v-container>
@@ -61,10 +62,6 @@ export default {
           icon: 'mdi-account',
           title: 'Account',
           to: '/account',
-        },
-        {
-          title: 'Auth',
-          to: '/auth',
         },
       ],
       right: true,

@@ -1,0 +1,920 @@
+[
+    {
+        "id": 0,
+        "display_name": "Official PDGA Store",
+        "link": "https://pdgastore.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 1,
+        "display_name": "Adopt Disc Golf Customs",
+        "link": "https://www.adoptdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 2,
+        "display_name": "Basket Bashers Disc Golf",
+        "link": "https://www.basketbashersdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 3,
+        "display_name": "Disc Golf Discs for Sale",
+        "link": "https://infinitediscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 4,
+        "display_name": "Marshall Street Disc Golf Pro Shop",
+        "link": "https://www.marshallstreetdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 5,
+        "display_name": "Disc Golf United",
+        "link": "https://dgustore.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 6,
+        "display_name": "INNOVA Disc Golf Pro Shop",
+        "link": "https://proshop.innovadiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 7,
+        "display_name": "Discmania Golf Discs &ndash",
+        "link": "https://store.discmania.net",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 8,
+        "display_name": "Discraft Inc",
+        "link": "https://www.discraft.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 9,
+        "display_name": "MVP Pro Shop",
+        "link": "https://mvpproshop.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 10,
+        "display_name": "Latitude 64° Factory Store",
+        "link": "https://store.latitude64.se",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 11,
+        "display_name": "Black Zombie",
+        "link": "https://blackzombie.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 12,
+        "display_name": "DiscGolfValues.com",
+        "link": "https://www.discgolfvalues.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 13,
+        "display_name": "Disc Golf Store",
+        "link": "https://www.dynamicdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 14,
+        "display_name": "Disc Nation",
+        "link": "https://www.discnation.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 15,
+        "display_name": "Anhyzer Disc Golf",
+        "link": "https://anhyzertv.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 16,
+        "display_name": "Shop",
+        "link": "https://www.riversidediscgolfshop.com/shop",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 17,
+        "display_name": "MINT Discs Austin Texas Disc Golf Company &ndash",
+        "link": "https://mintdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 18,
+        "display_name": "THE WRIGHT LIFE FLYING DISC AND FRISBEE SPORTING GOODS",
+        "link": "http://www.wrightlife.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 19,
+        "display_name": "Ultimate Frisbee &amp",
+        "link": "https://www.discstore.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 20,
+        "display_name": "Nailed It Disc Golf",
+        "link": "https://naileditdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 21,
+        "display_name": "Reptilian Disc Golf: Craft Golf Discs",
+        "link": "https://reptiliandiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 22,
+        "display_name": "Hero Disc USA",
+        "link": "http://www.herodiscusa.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 23,
+        "display_name": "DFX Discs",
+        "link": "https://dfxdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 24,
+        "display_name": "DZDiscs",
+        "link": "https://www.dzdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 25,
+        "display_name": "Discs Unlimited: Disc Golf Discs",
+        "link": "https://discsunlimited.net",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 26,
+        "display_name": "Welcome to Sun King Discs",
+        "link": "https://www.sunkingdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 27,
+        "display_name": "Gotta Go Gotta Throw",
+        "link": "http://www.gottagogottathrow.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 28,
+        "display_name": "Disc Golf Wholesale",
+        "link": "https://www.discgolfwholesale.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 29,
+        "display_name": "1010 Discs",
+        "link": "https://1010discs.com/",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 30,
+        "display_name": "Sockibomb  Disc Golf",
+        "link": "https://sockibomb.com/",
+        "store_type": "PLAYER"
+    },
+    {
+        "id": 31,
+        "display_name": "Paul McBeth Disc Golf",
+        "link": "https://paulmcbeth.com/",
+        "store_type": "PLAYER"
+    },
+    {
+        "id": 32,
+        "display_name": "Paul McBeth Foundation",
+        "link": "https://www.paulmcbethfoundation.org/",
+        "store_type": "PLAYER"
+    },
+    {
+        "id": 33,
+        "display_name": "Shop All",
+        "link": "https://www.zenllamadiscgolf.com/s/shop",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 34,
+        "display_name": "KWs Disc Golf",
+        "link": "http://kwsdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 35,
+        "display_name": "Discovering the World Disc Golf Discs & Disc Dog",
+        "link": "http://www.dtworld.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 36,
+        "display_name": "Grand Rapids Disc Golf Store with online disc golf sales",
+        "link": "https://www.discbaron.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 37,
+        "display_name": "Your #1 Source for Disc Golf Equipment",
+        "link": "https://www.discgolfmarket.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 38,
+        "display_name": "AGL Discs",
+        "link": "https://www.agldiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 39,
+        "display_name": "Lucky Disc Golf Store",
+        "link": "https://luckydiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 40,
+        "display_name": "Texas Chainwreck Disc Golf Pro shop",
+        "link": "https://texaschainwreck.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 41,
+        "display_name": "Daddy Disc Golf",
+        "link": "https://www.daddydiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 42,
+        "display_name": "Discovering the World Disc Golf Discs & Disc Dog",
+        "link": "https://www.dtworld.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 43,
+        "display_name": "Disc Golf Store",
+        "link": "https://discgolfstore.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 44,
+        "display_name": "OTBDiscs.com",
+        "link": "http://otbdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 46,
+        "display_name": "Gateway Disc Sports",
+        "link": "http://www.gdstour.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 47,
+        "display_name": "Black Ink Discs",
+        "link": "https://www.blackinkdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 48,
+        "display_name": "Online retailer of Disc Golf Discs, Baskets, Accessories and Clothing. Including products from Innova, Discraft, Gateway, Latitude 64, MVP, DGA, Millennium and Ching",
+        "link": "http://www.discgolfcenter.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 49,
+        "display_name": "SDG We are #1 Pro Shop experience for discs, gear &amp",
+        "link": "https://www.sabattusdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 50,
+        "display_name": "Flight Factory Discs: Disc Golf",
+        "link": "https://www.flightfactorydiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 51,
+        "display_name": "Disc Golf Store",
+        "link": "https://foundationdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 52,
+        "display_name": "Sweet Spot Disc Golf",
+        "link": "https://www.sweetspotdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 53,
+        "display_name": "Store Home • DiscGolf.com",
+        "link": "https://www.discgolf.com/dga-factory-store",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 54,
+        "display_name": "DiscGolfer.com &ndash",
+        "link": "https://discgolfer.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 56,
+        "display_name": "Prodigy Disc Golf",
+        "link": "https://shop.prodigydisc.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 57,
+        "display_name": "Disc Golf Store",
+        "link": "https://discgolfshopping.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 58,
+        "display_name": "The Disc Barn",
+        "link": "https://thediscbarn.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 59,
+        "display_name": "Shop Online &#8211",
+        "link": "https://thediscgolfexperience.com/shop/",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 60,
+        "display_name": "Discs",
+        "link": "https://throwyo.com/discs",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 61,
+        "display_name": "Disc Golf Equipment &amp",
+        "link": "https://www.tudiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 62,
+        "display_name": "Gazebo Disc Golf",
+        "link": "https://gazebodiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 63,
+        "display_name": "Tree Love Disc Golf",
+        "link": "https://treelovedg.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 64,
+        "display_name": "Chain Reaction Disc Golf Home",
+        "link": "https://www.chainreactiondiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 65,
+        "display_name": "Everything Disc Golf",
+        "link": "https://everythingdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 66,
+        "display_name": "Gorilla Disc Golf",
+        "link": "https://gorilladiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 67,
+        "display_name": "Disc Golf Discs Archives",
+        "link": "https://www.flylanddesigns.com/product-category/disc-golf-discs",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 68,
+        "display_name": "Home",
+        "link": "https://wingzdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 69,
+        "display_name": "Utility Disc Golf",
+        "link": "https://www.utilitydiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 70,
+        "display_name": "Skybreed Discs",
+        "link": "https://skybreed-discs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 71,
+        "display_name": "Thought Space Athletics",
+        "link": "https://thoughtspaceathletics.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 72,
+        "display_name": "Beyer Discs",
+        "link": "https://beyerdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 73,
+        "display_name": "Disc Golf",
+        "link": "https://www.lonestardiscs.net",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 74,
+        "display_name": "Disc Golf Gifts",
+        "link": "https://www.csadiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 75,
+        "display_name": "Swift Discs",
+        "link": "https://swiftdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 76,
+        "display_name": "Piratedisc.com &ndash",
+        "link": "https://www.piratedisc.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 77,
+        "display_name": "squadrondiscgolf.com",
+        "link": "https://squadrondiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 78,
+        "display_name": "Disc Golf 978",
+        "link": "https://discgolf978.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 79,
+        "display_name": "Griplocked",
+        "link": "https://griplocked.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 80,
+        "display_name": "Double Helix Disc Sports",
+        "link": "https://doublehelixdiscsports.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 81,
+        "display_name": "The Throw Shop",
+        "link": "https://throwshop.us",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 82,
+        "display_name": "Home",
+        "link": "https://www.mittenbags.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 83,
+        "display_name": "All Out Disc Golf",
+        "link": "https://alloutdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 84,
+        "display_name": "Disc Golf Products&ndash",
+        "link": "https://bluedogdiscgolf.com/collections/disc-golf-products",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 85,
+        "display_name": "Disc Golf Shopping Made Easy",
+        "link": "https://altitudediscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 86,
+        "display_name": "Welcome to Fly Green Disc Golf",
+        "link": "https://eplanet-toys-com.3dcartstores.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 87,
+        "display_name": "Neighborhood Disc Golf",
+        "link": "https://neighborhooddiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 88,
+        "display_name": "Top",
+        "link": "https://optiondiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 89,
+        "display_name": "Circle 1 Disc",
+        "link": "https://www.c1disc.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 91,
+        "display_name": "Full Flight Disc Golf",
+        "link": "https://fullflightdisc.com/",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 92,
+        "display_name": "Gravity Disc Golf",
+        "link": "https://gravitydiscgolf.com/",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 93,
+        "display_name": "Breakingaces.com",
+        "link": "https://www.breakingaces.com/",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 94,
+        "display_name": "Terminal Velocity Discs",
+        "link": "https://terminalvelocitydiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 95,
+        "display_name": "",
+        "link": "https://www.abilenediscgolfstore.com/s/shop",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 96,
+        "display_name": "Pureline Disc Golf",
+        "link": "https://purelinedg.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 97,
+        "display_name": "Fly Guy Disc Golf",
+        "link": "https://flyguydiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 98,
+        "display_name": "Disc Golf",
+        "link": "https://www.tripleplayrecords.com/disc-golf.html",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 99,
+        "display_name": "Home",
+        "link": "https://www.harpoonlarrydiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 100,
+        "display_name": "DISC 'N DAT ONE STOP SHOP FOR DISC GOLF",
+        "link": "https://www.therealdiscndat.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 101,
+        "display_name": "Ideal Discs",
+        "link": "https://idealdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 102,
+        "display_name": "College Disc Golf &#8211",
+        "link": "https://collegediscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 103,
+        "display_name": "Home",
+        "link": "https://www.packexdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 104,
+        "display_name": "Wild Discs",
+        "link": "https://wilddiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 105,
+        "display_name": "BlueSky Disc Golf",
+        "link": "https://www.blueskydiscgolf.co/",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 106,
+        "display_name": "Hazy Shade",
+        "link": "https://hazyshade.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 107,
+        "display_name": "Home",
+        "link": "https://www.discgolfamerica.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 108,
+        "display_name": "platformdsiscs",
+        "link": "https://platformdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 110,
+        "display_name": "Home",
+        "link": "https://www.ardg.shop",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 111,
+        "display_name": "Welcome to Arrow Disc Distributions",
+        "link": "http://arrowdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 112,
+        "display_name": "",
+        "link": "https://www.cycleworksdiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 113,
+        "display_name": "Home",
+        "link": "https://gripnglidediscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 114,
+        "display_name": "Premium Rubber Disc Golf Discs",
+        "link": "https://www.elevationdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 115,
+        "display_name": "Disc Golf 978",
+        "link": "https://discgolf978.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 116,
+        "display_name": "Disc Golf Shop",
+        "link": "https://yeetstreetdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 117,
+        "display_name": "Gregg Barsby Professional Disc Golfer &ndash",
+        "link": "https://greggbarsby.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 118,
+        "display_name": "Paige Pierce Disc Golf",
+        "link": "https://paigepierce.com",
+        "store_type": "PLAYER"
+    },
+    {
+        "id": 119,
+        "display_name": "ZAMdesign Disc Golf Art",
+        "link": "https://zamdesign.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 120,
+        "display_name": "SkeetDesigns",
+        "link": "https://skeetdesigns.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 121,
+        "display_name": "Løft Discs Shop",
+        "link": "https://loftdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 122,
+        "display_name": "Home",
+        "link": "https://www.highhyzers.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 123,
+        "display_name": "Mile High Disc Supply",
+        "link": "https://milehighdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 124,
+        "display_name": "Ran Disc Golf! Northeast PA's premier Disc Golf Equipment Supplier! Tunkhannock",
+        "link": "https://www.randiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 125,
+        "display_name": "Home",
+        "link": "https://topbanddisc.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 126,
+        "display_name": "Home",
+        "link": "https://jess-ben-discin.square.site",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 127,
+        "display_name": "Storm Disc Golf Discs &#8211",
+        "link": "https://stormdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 128,
+        "display_name": "Home",
+        "link": "https://teamfiggins.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 129,
+        "display_name": "Shop",
+        "link": "https://www.hippiediscs.com/shop",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 130,
+        "display_name": "Soul Crusher Disc Golf",
+        "link": "https://soulcrusherdg.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 131,
+        "display_name": "MARs Flying Saucers &ndash",
+        "link": "https://marsdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 132,
+        "display_name": "Disc Golf Bros.",
+        "link": "https://dgbdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 133,
+        "display_name": "Shop &#8902",
+        "link": "https://www.innerpeacediscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 134,
+        "display_name": "MiDisc LLC",
+        "link": "https://midiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 135,
+        "display_name": "Home",
+        "link": "https://nshcustomdiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 136,
+        "display_name": "Disc Golf Deals USA",
+        "link": "https://discgolfdealsusa.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 137,
+        "display_name": "Crush the Course",
+        "link": "https://roguediscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 138,
+        "display_name": "Fringe Disc Golf",
+        "link": "https://fringediscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 139,
+        "display_name": "Reload Discs",
+        "link": "https://reloaddiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 140,
+        "display_name": "Disc Golf Supplies",
+        "link": "https://www.3cdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 141,
+        "display_name": "Evolution Disc Golf",
+        "link": "https://www.evolutiondiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 142,
+        "display_name": "Bang",
+        "link": "https://bangachain.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 143,
+        "display_name": "New York Disc Golf Supply",
+        "link": "https://www.newyorkdiscgolfsupply.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 144,
+        "display_name": "Titan Disc Golf Shop",
+        "link": "https://titandiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 145,
+        "display_name": "Disc Golf Discs, Shirts &amp",
+        "link": "https://reaperdiscs.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 146,
+        "display_name": "Great Lakes Disc",
+        "link": "https://greatlakesdisc.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 147,
+        "display_name": "Birdie Disc Golf Supply Co.",
+        "link": "https://birdiediscgolfsupply.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 148,
+        "display_name": "Aloft Disc Golf",
+        "link": "https://aloftdg.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 149,
+        "display_name": "Anhyzer Disc Golf",
+        "link": "https://anhyzerdg.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 150,
+        "display_name": "Par Plastics",
+        "link": "https://parplastics.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 151,
+        "display_name": "TRASH PANDA",
+        "link": "https://trashpandadiscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 152,
+        "display_name": "Colorado Discs: Flying Circles With Altitude",
+        "link": "https://www.coloradodiscs.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 153,
+        "display_name": "TeamJustice Disc Golf",
+        "link": "https://teamjusticediscgolf.com",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 154,
+        "display_name": "The official shop of the Ledgestone Insurance Open",
+        "link": "https://shop.lisopen.com",
+        "store_type": "FACTORY"
+    },
+    {
+        "id": 155,
+        "display_name": "Disc Golf Archives",
+        "link": "https://www.bevelbeer.com/product-category/disc-golf",
+        "store_type": "RETAILER"
+    },
+    {
+        "id": 156,
+        "display_name": "Home",
+        "link": "https://www.cfauschdesigns.com",
+        "store_type": "FACTORY"
+    }
+]

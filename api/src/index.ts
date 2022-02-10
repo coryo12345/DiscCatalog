@@ -6,8 +6,7 @@ import storeRoute from './routes/store';
 import { auth } from 'express-oauth2-jwt-bearer';
 import env from './env';
 
-// todo coalesce from master file or env
-import 'dotenv/config'; // todo remove dep on dotenv
+// TODO catch err
 const checkJwt = auth({
   issuerBaseURL: env.ISSUER_BASE_URL,
   audience: env.AUDIENCE

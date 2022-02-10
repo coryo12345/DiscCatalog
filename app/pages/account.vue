@@ -1,59 +1,72 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col>
-        <h1>Account</h1>
-      </v-col>
-    </v-row>
-    <v-row align="center">
-      <v-col>
-        <v-text-field v-model="name" hide-details placeholder="Name" solo />
-      </v-col>
-      <v-col>
-        <v-text-field v-model="email" hide-details placeholder="Email" solo />
-      </v-col>
-      <v-col>
-        <v-btn large color="primary" @click="addUser">Add</v-btn>
-      </v-col>
-    </v-row>
-    <v-row>
-      <h1>Users</h1>
-    </v-row>
-    <v-row v-for="user in users" :key="user.email">
-      <v-col>Name: {{ user.name }}</v-col>
-      <v-col>Email: {{ user.email }}</v-col>
-    </v-row>
+  <v-container id="dc-account">
+    <div class="d-block">
+      <h1>Account</h1>
+    </div>
+    <div v-if="$auth.loggedIn" class="d-flex align-center">
+      <v-avatar v-if="!!$auth.user.picture">
+        <img :src="$auth.user.picture" alt="user profile picture" />
+      </v-avatar>
+      <p class="my-0 ml-2 text-h6">{{ $auth.user.name }}</p>
+      <v-btn class="my-auto ml-auto" color="primary" @click="logout">
+        Log Out
+      </v-btn>
+    </div>
+    <div><h2>Settings</h2></div>
+    <div class="d-block">
+      <v-text-field
+        v-model="displayName"
+        class="shrink"
+        label="Display Name"
+        outlined
+        dense
+      />
+      <v-btn color="primary" @click="saveSettings">Save</v-btn>
+    </div>
+    <div>
+      {{ $auth.user }}
+    </div>
   </v-container>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import { URLS } from '@/constants/'
+// import { URLS } from '@/constants/'
 
 export default {
   name: 'AccountPage',
   data() {
     return {
-      name: '',
-      email: '',
+      displayName: '',
     }
   },
-  computed: {
-    ...mapGetters({
-      users: 'getUsers',
-    }),
-  },
   created() {
-    this.$store.dispatch('loadUsers')
+    // check if logged in
+    if (this.$auth.loggedIn) {
+      // TODO fetch displayName
+      this.displayName = ''
+    } else {
+      // take to login page if not
+      this.$auth.loginWith('auth0')
+    }
   },
   methods: {
-    async addUser() {
-      await this.$axios.$post(URLS.CREATE_USER, {
-        name: this.name,
-        email: this.email,
-      })
-      this.$store.dispatch('loadUsers')
+    logout() {
+      this.$auth.logout()
+    },
+    saveSettings() {
+      // TODO save displayName
+      alert('TODO')
     },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+#dc-account > div {
+  margin-bottom: 1em;
+}
+
+.v-text-field {
+  max-width: 20em;
+}
+</style>
