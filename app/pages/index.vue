@@ -83,5 +83,11 @@
 <script>
 export default {
   name: 'IndexPage',
+  created() {
+    if (this.$auth.loggedIn) {
+      const token = this.$auth.strategy.token.get()
+      this.$axios.setToken(token)
+    }
+  },
 }
 </script>

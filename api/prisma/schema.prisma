@@ -9,23 +9,13 @@ datasource db {
 }
 
 model User {
-  id           Int              @id @default(autoincrement())
-  name         String?
-  email        String           @unique
-  role         Role             @default(USER)
-  discs        Disc[]
-  profile      UserProfile?
-}
-
-model UserProfile {
-  id     Int        @id @default(autoincrement())
-  userId Int?       @unique
-  bio    String?
-  User   User?      @relation(fields: [userId], references: [id])
+  id          BigInt        @id @default(autoincrement())
+  authId      String        @unique
+  discs       Disc[]
 }
 
 model Disc {
-  id          Int         @id @default(autoincrement())
+  id          BigInt        @id @default(autoincrement())
   brand       String?
   mold        String?
   plastic     String?
@@ -33,11 +23,21 @@ model Disc {
   run         String?
   foil        String?
   stamp       String?
-  color       String?     // hex code
-  shared      Boolean     @default(false)
+  color       String?       // hex code
+  shared      Boolean       @default(false)
   image       String?
-  userId      Int?
-  User        User?       @relation(fields: [userId], references: [id])
+  discMeta    DiscMeta?
+  userId      BigInt?
+  User        User?         @relation(fields: [userId], references: [id])
+}
+
+model DiscMeta {
+  id          BigInt        @id @default(autoincrement())
+  createdDate DateTime
+  public      Boolean
+  likes       BigInt        @default(0)
+  discId      BigInt
+  disc        Disc?         @relation(fields: [discId], references: [id])
 }
 
 model Store {
@@ -45,11 +45,6 @@ model Store {
   display_name  String
   link          String
   store_type    StoreType
-}
-
-enum Role {
-  USER
-  ADMIn
 }
 
 enum StoreType {

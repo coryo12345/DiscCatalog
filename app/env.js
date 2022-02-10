@@ -27,4 +27,4 @@ Object.keys(env).forEach(key => {
   env[key] = envObj[key];
 });
 
-module.exports = envObj;
+module.exports = env;

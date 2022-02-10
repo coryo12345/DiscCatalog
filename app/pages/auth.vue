@@ -27,6 +27,7 @@ export default {
     log() {
       console.log(this.$auth);
       console.log(this.$store);
+      console.log(this.$auth.strategy.token.get());
     }
   },
 }

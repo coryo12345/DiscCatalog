@@ -4,7 +4,6 @@ import { URLS } from '@/constants/';
 export const state = () => ({
   users: [],
   discs: [],
-  stores: [],
 })
 
 export const getters = {
@@ -14,11 +13,7 @@ export const getters = {
 
   getDiscs(state) {
     return state.discs;
-  },
-
-  getStores(state) {
-    return state.stores;
-  },
+  }
 }
 
 export const mutations = {
@@ -28,10 +23,6 @@ export const mutations = {
 
   SET_DISCS(state, discs) {
     state.discs = discs;
-  },
-
-  SET_STORES(state, stores) {
-    state.stores = stores;
   }
 }
 
@@ -44,12 +35,5 @@ export const actions = {
   loadDiscs({ commit }) {
     this.$axios.$get(URLS.GET_DISCS)
       .then(resp => commit('SET_DISCS', resp));
-  },
-
-  loadStores({ state, commit }) {
-    if (!state.stores.length) {
-      this.$axios.$get(URLS.GET_STORES)
-      .then(resp => commit('SET_STORES', resp));
-    }
   }
 }

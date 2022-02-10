@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { URLS } from '@/constants/';
 
 function storeSort(a, b) {
   if (a.display_name < b.display_name) return -1
@@ -81,16 +81,17 @@ export default {
   name: 'StoresPage',
   data() {
     return {
+      stores: [],
       search: '',
       showManufacturers: true,
       showRetailers: true,
       showPlayers: true,
     }
   },
+  async fetch() {
+    this.stores = await this.$axios.$get(URLS.GET_STORES);
+  },
   computed: {
-    ...mapGetters({
-      stores: 'getStores',
-    }),
     manufacturers() {
       return this.stores
         .filter((s) => s.store_type === 'FACTORY')
@@ -115,9 +116,6 @@ export default {
         )
         .sort(storeSort)
     },
-  },
-  created() {
-    this.$store.dispatch('loadStores')
   },
 }
 </script>

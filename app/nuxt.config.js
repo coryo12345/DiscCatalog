@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+// eslint-disable-next-line import/default
 import env from './env'
 
 export default {
