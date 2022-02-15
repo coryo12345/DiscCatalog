@@ -11,6 +11,8 @@ const env = {
   DB_HOST: '',
   ISSUER_BASE_URL: '',
   AUDIENCE: '',
+  DOMAIN: '',
+  CLIENT_ID: '',
   PORT: '3001',
 };
 let envObj = {};

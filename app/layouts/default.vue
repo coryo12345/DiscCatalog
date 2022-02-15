@@ -49,14 +49,19 @@ export default {
           to: '/',
         },
         {
-          icon: 'mdi-cart',
-          title: 'Stores',
-          to: '/stores',
+          icon: 'mdi-magnify',
+          title: 'Browse',
+          to: '/browse',
         },
         {
           icon: 'mdi-briefcase',
           title: 'My Discs',
           to: '/discs',
+        },
+        {
+          icon: 'mdi-cart',
+          title: 'Stores',
+          to: '/stores',
         },
         {
           icon: 'mdi-account',
