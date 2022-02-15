@@ -28,17 +28,16 @@ model Disc {
   shared      Boolean       @default(false)
   image       String?
   discMeta    DiscMeta?
-  userId      Int?
-  User        User?         @relation(fields: [userId], references: [id])
+  userId      Int
+  User        User          @relation(fields: [userId], references: [id])
 }
 
 model DiscMeta {
   id          Int           @id @default(autoincrement())
   createdDate DateTime
-  public      Boolean
   likes       Int           @default(0)
   discId      Int
-  disc        Disc?         @relation(fields: [discId], references: [id])
+  disc        Disc          @relation(fields: [discId], references: [id])
 }
 
 model Store {

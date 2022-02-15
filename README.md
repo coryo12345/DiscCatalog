@@ -1,19 +1,12 @@
 # DiscCatalog
 
 ## TODO
-* set display name endpoint
-* set display name form
-* get display name on load
-* account skeleton loader
-* stores skeleton loader
-* update store seed title to use url if home or too long
-* create disc endpoint
-* get discs endpoint
+* update store seed data title to use url if home or too long
+* seed disc data
+* test create disc endpoint
+* finish create disc form
 * edit disc endpoint
-* create disc form
 * edit disc form (reuse?)
-* view my discs page
-* my discs skeleton loader
 * get public discs 
 * view public discs page
 * public discs skeleton loader

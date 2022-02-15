@@ -86,6 +86,7 @@ export default {
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
           text: colors.shades.white,
+          background: colors.shades.white,
         },
         dark: {
           primary: colors.blue.darken2,
@@ -96,6 +97,7 @@ export default {
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
           text: colors.shades.white,
+          background: colors.shades.black,
         },
       },
     },

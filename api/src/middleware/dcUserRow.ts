@@ -1,4 +1,4 @@
-import { Response } from 'express';
+import { Request, Response } from 'express';
 import jwtDecode from 'jwt-decode';
 import { JWT } from '../types/JWT';
 import checkJwt from './checkJwt';
@@ -6,7 +6,7 @@ import { prismaAccessor } from '../dbClient';
 import { DCRequest } from '../types/DCHttp';
 const prisma = prismaAccessor();
 
-const dcUserRow = function (req: DCRequest, res: Response, next: Function) {
+const dcUserRow = function (req: Request, res: Response, next: Function) {
   checkJwt(req, res, async function () {
     // should be present & safe because checkJwt middleware already validated auth token.
     const accessToken = (req.headers.authorization as String).split(' ')[1];
@@ -14,7 +14,7 @@ const dcUserRow = function (req: DCRequest, res: Response, next: Function) {
     // make sure token is not expired
     const now = Math.floor(new Date().getTime() / 1000);
     if (now > userToken.exp) {
-      res.status(401);
+      res.sendStatus(401);
     }
 
     // make sure row exists
@@ -39,7 +39,7 @@ const dcUserRow = function (req: DCRequest, res: Response, next: Function) {
     } else {
       id = users[0].id;
     }
-    req.disc = { id: id };
+    (req as DCRequest).disc = { id: id };
     next();
   });
 };

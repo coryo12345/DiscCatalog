@@ -15,61 +15,85 @@
         <v-checkbox v-model="showPlayers" label="Players" />
       </v-col>
       <v-col cols="12" sm="3" md="auto">
-        <v-text-field
-          v-model="search"
-          placeholder="Search"
-          hide-details
-          solo
-        />
+        <v-text-field v-model="search" placeholder="Search" hide-details solo />
       </v-col>
     </v-row>
-    <v-container v-if="showManufacturers">
-      <v-row>
-        <v-col>
-          <h2>Manufacturers</h2>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col v-for="(store, index) in manufacturers" :key="index" class="my-2" cols="auto">
-          <a :href="store.link" target="_blank" class="store-card text--text">{{
-            store.display_name
-          }}</a>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-container v-if="showRetailers">
-      <v-row>
-        <v-col>
-          <h2>Retailers</h2>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col v-for="(store, index) in retailers" :key="index" class="my-2" cols="auto">
-          <a :href="store.link" target="_blank" class="store-card text--text">{{
-            store.display_name
-          }}</a>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-container v-if="showPlayers">
-      <v-row>
-        <v-col>
-          <h2>Players</h2>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col v-for="(store, index) in players" :key="index" class="my-2" cols="auto">
-          <a :href="store.link" target="_blank" class="store-card text--text">{{
-            store.display_name
-          }}</a>
-        </v-col>
-      </v-row>
-    </v-container>
+    <div v-if="loading">
+      <v-skeleton-loader :loading="loading" />
+    </div>
+    <div v-else>
+      <v-container v-if="showManufacturers">
+        <v-row>
+          <v-col>
+            <h2>Manufacturers</h2>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col
+            v-for="(store, index) in manufacturers"
+            :key="index"
+            class="my-2"
+            cols="auto"
+          >
+            <a
+              :href="store.link"
+              target="_blank"
+              class="store-card text--text"
+              >{{ store.display_name }}</a
+            >
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-container v-if="showRetailers">
+        <v-row>
+          <v-col>
+            <h2>Retailers</h2>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col
+            v-for="(store, index) in retailers"
+            :key="index"
+            class="my-2"
+            cols="auto"
+          >
+            <a
+              :href="store.link"
+              target="_blank"
+              class="store-card text--text"
+              >{{ store.display_name }}</a
+            >
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-container v-if="showPlayers">
+        <v-row>
+          <v-col>
+            <h2>Players</h2>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col
+            v-for="(store, index) in players"
+            :key="index"
+            class="my-2"
+            cols="auto"
+          >
+            <a
+              :href="store.link"
+              target="_blank"
+              class="store-card text--text"
+              >{{ store.display_name }}</a
+            >
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
   </v-container>
 </template>
 
 <script>
-import { URLS } from '@/constants/';
+import { URLS } from '@/constants/'
 
 function storeSort(a, b) {
   if (a.display_name < b.display_name) return -1
@@ -81,6 +105,7 @@ export default {
   name: 'StoresPage',
   data() {
     return {
+      loading: true,
       stores: [],
       search: '',
       showManufacturers: true,
@@ -89,7 +114,8 @@ export default {
     }
   },
   async fetch() {
-    this.stores = await this.$axios.$get(URLS.GET_STORES);
+    this.stores = await this.$axios.$get(URLS.GET_STORES)
+    this.loading = false
   },
   computed: {
     manufacturers() {

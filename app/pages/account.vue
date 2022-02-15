@@ -8,54 +8,48 @@
         <img :src="$auth.user.picture" alt="user profile picture" />
       </v-avatar>
       <p class="my-0 ml-2 text-h6">{{ $auth.user.name }}</p>
-      <v-btn class="my-auto ml-auto" color="primary" @click="logout">
-        Log Out
-      </v-btn>
     </div>
     <div><h2>Settings</h2></div>
     <div class="d-block">
       <v-text-field
         v-model="displayName"
-        class="shrink"
+        class="shrink d-inline-block"
+        :loading="loading"
         label="Display Name"
         outlined
         dense
       />
-      <v-btn color="primary" @click="saveSettings">Save</v-btn>
-    </div>
-    <div>
-      {{ $auth.user }}
+      <p class="d-inline-block accent--text ml-2">Display name for public posts</p>
+      <v-btn color="primary" class="d-block" @click="saveSettings">Save</v-btn>
     </div>
   </v-container>
 </template>
 
 <script>
-// import { URLS } from '@/constants/'
+import { URLS } from '@/constants/'
 
 export default {
   name: 'AccountPage',
   data() {
     return {
+      loading: true,
       displayName: '',
     }
   },
-  created() {
+  async created() {
     // check if logged in
     if (this.$auth.loggedIn) {
-      // TODO fetch displayName
-      this.displayName = ''
+      const userData = await this.$axios.$get(URLS.CURRENT_USER)
+      this.displayName = userData.displayName;
+      this.loading = false;
     } else {
       // take to login page if not
       this.$auth.loginWith('auth0')
     }
   },
   methods: {
-    logout() {
-      this.$auth.logout()
-    },
     saveSettings() {
-      // TODO save displayName
-      alert('TODO')
+      this.$axios.$post(URLS.UPDATE_CURRENT_USER, { displayName: this.displayName });
     },
   },
 }

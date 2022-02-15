@@ -1,5 +1,8 @@
 <template>
-  <v-btn v-if="$auth.loggedIn" :to="'/account'" color="text">
+  <v-btn v-if="$auth.loggedIn && $route.name === 'account'" @click="logout">
+    Log Out
+  </v-btn>
+  <v-btn v-else-if="$auth.loggedIn" :to="'/account'" color="text">
     My Account
   </v-btn>
   <v-btn v-else @click="login">
@@ -12,6 +15,9 @@ export default {
   methods: {
     login() {
       this.$auth.loginWith('auth0');
+    },
+    logout() {
+      this.$auth.logout()
     }
   }
 }

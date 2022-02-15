@@ -1,6 +1,6 @@
 <template>
-  <v-card>
-    <v-card-title>
+  <v-card class="max-height">
+    <v-card-title class="word-break">
       {{ name }}
     </v-card-title>
     <v-card-subtitle>
@@ -37,3 +37,13 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.word-break.v-card__title {
+  word-break: break-word;
+}
+
+.max-height {
+  height: 100%;
+}
+</style>
