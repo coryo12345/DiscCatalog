@@ -4,7 +4,7 @@
     <!-- <div v-if="disc.image"></div> -->
     <div v-for="attr in attributes" :key="attr" class="mb-2">
       <span class="capital left-col pr-1">{{ attr }}</span>
-      <span>{{ disc[attr] }}</span>
+      <span class="capital">{{ disc[attr] }}</span>
     </div>
     <div v-if="editable" class="d-flex">
       <v-btn class="ml-auto" @click="edit">Edit</v-btn>
