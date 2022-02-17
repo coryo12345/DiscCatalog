@@ -25,7 +25,7 @@
         </v-col>
       </v-row>
       <v-dialog v-model="addDiscForm" max-width="700">
-        <DiscForm :disc="dialogDisc" @update="updateDisc" />
+        <DiscForm :disc="dialogDisc" @update="updateDisc" @create="createDisc" />
       </v-dialog>
       <v-dialog v-model="discDetails" max-width="700">
         <DiscDetail :disc="dialogDisc" :editable="true" @edit="editDiscCallback" />
@@ -76,6 +76,10 @@ export default {
       this.dialogDisc = disc;
       this.addDiscForm = false;
       this.discDetails = true;
+    },
+    createDisc(disc) {
+      this.discs.push(disc);
+      this.addDiscForm = false;
     },
     updateDisc(disc) {
       const id = disc.id;

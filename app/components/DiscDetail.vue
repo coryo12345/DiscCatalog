@@ -33,7 +33,7 @@ export default {
     },
     attributes() {
       return Object.keys(this.disc).filter(x => 
-        !['image', 'id', 'userid'].includes(x.toLowerCase()) &&
+        !['image', 'id', 'userid', 'user'].includes(x.toLowerCase()) &&
         this.disc[x]
       );
     }

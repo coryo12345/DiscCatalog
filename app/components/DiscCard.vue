@@ -6,6 +6,9 @@
     <v-card-subtitle>
       {{ disc.brand }}
     </v-card-subtitle>
+    <v-card-text v-if="username.length">
+      {{ username }}
+    </v-card-text>
   </v-card>
 </template>
 
@@ -29,6 +32,11 @@ export default {
       type: Object,
       required: true,
     },
+    username: {
+      type: String,
+      required: false,
+      default: '',
+    }
   },
   computed: {
     name() {

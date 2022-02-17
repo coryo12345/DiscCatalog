@@ -22,7 +22,7 @@
           />
           <v-text-field
             v-else-if="field.type === 'Number'"
-            v-model="internalDisc[field.name]"
+            v-model.number="internalDisc[field.name]"
             type="number"
             min="100"
             max="200"
@@ -120,6 +120,7 @@ export default {
             this.$emit('update', this.internalDisc);
           } else {
             await this.$axios.$post(URLS.ADD_DISC, this.internalDisc);
+            this.$emit('create', this.internalDisc);
           }
         } catch (err) {
           this.error = true;

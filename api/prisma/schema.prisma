@@ -29,14 +29,14 @@ model Disc {
   image       String?
   discMeta    DiscMeta?
   userId      Int
-  User        User          @relation(fields: [userId], references: [id])
+  user        User          @relation(fields: [userId], references: [id])
 }
 
 model DiscMeta {
   id          Int           @id @default(autoincrement())
   createdDate DateTime
   likes       Int           @default(0)
-  discId      Int
+  discId      Int           @unique
   disc        Disc          @relation(fields: [discId], references: [id])
 }
 

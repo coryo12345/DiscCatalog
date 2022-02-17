@@ -18,7 +18,7 @@
         sm="4"
         md="3"
       >
-        <DiscCard :disc="disc" @details="showDetails" />
+        <DiscCard :disc="disc" :username="disc.user.displayName" @details="showDetails" />
       </v-col>
     </v-row>
     <v-dialog v-model="discDetails" max-width="700">

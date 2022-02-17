@@ -1,12 +1,14 @@
 # DiscCatalog
 
 ## TODO
-* update store seed data title to use url if home or too long (or empty)
-* test create disc endpoint
 * edit disc endpoint
-* browse pagination
-* browse show display name
+* account give err / success on save
+* sort discs on browse
+* filter discs on browse
+* sort discs on my discs
+* filter discs on my discs
 * Home page
 
 ## Additions
+* browse pagination
 * image storage for discs

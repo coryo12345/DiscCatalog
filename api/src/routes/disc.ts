@@ -6,9 +6,23 @@ const prisma = prismaAccessor();
 const router = express.Router();
 
 router.get('/discs/all', async (_, res) => {
-  // TODO join user to get displayname instead of id
   // TODO pagination
   const result = await prisma.disc.findMany({
+    select: {
+      brand: true,
+      mold: true,
+      plastic: true,
+      weight: true,
+      run: true,
+      foil: true,
+      stamp: true,
+      color: true,
+      user: {
+        select: {
+          displayName: true
+        }
+      }
+    },
     where: {
       shared: true
     }
@@ -38,14 +52,14 @@ router.post('/add', dcUserRow, async (req, res) => {
       select: {id: true},
       data: {
         userId: userId,
-        brand: disc.Brand,
-        mold: disc.Mold,
-        plastic: disc.Plastic,
-        weight: disc.Weight,
-        run: disc.Run,
-        foil: disc.Foil,
-        stamp: disc.Stamp,
-        color: disc.Color,
+        brand: disc.brand,
+        mold: disc.mold,
+        plastic: disc.plastic,
+        weight: disc.weight,
+        run: disc.run,
+        foil: disc.foil,
+        stamp: disc.stamp,
+        color: disc.color,
       }
     });
     // TODO test this
@@ -58,6 +72,7 @@ router.post('/add', dcUserRow, async (req, res) => {
     });
     res.json({});
   } catch (err) {
+    console.error(err);
     res.sendStatus(500);
   }
 });

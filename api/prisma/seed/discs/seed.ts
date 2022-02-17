@@ -32,7 +32,7 @@ readFile(SEED_DATA_FILE, { encoding: 'utf8' }).then(async (SEED_DATA_RAW) => {
   seedData.discs.forEach((disc) => {
     prisma.disc
       .upsert({
-        select: { mold: true },
+        select: { id: true },
         where: {
           id: disc.id + 1,
         },
@@ -61,7 +61,24 @@ readFile(SEED_DATA_FILE, { encoding: 'utf8' }).then(async (SEED_DATA_RAW) => {
           shared: disc.shared,
         },
       })
-      .then((_) => count++);
+      .then((row) => {
+        prisma.discMeta.upsert({
+          select: {
+            id: true
+          },
+          where: {
+            discId: row.id,
+          },
+          update: {
+            createdDate: new Date(),
+            discId: row.id
+          },
+          create: {
+            createdDate: new Date(),
+            discId: row.id
+          }
+        }).then(_ => count++);
+      });
   });
 });
 
