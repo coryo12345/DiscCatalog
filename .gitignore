@@ -92,3 +92,7 @@ sw.*
 # database
 *.db
 data/data/*
+
+# seed data
+api/prisma/seed/discs/discs.json
+api/prisma/seed/stores/stores.json

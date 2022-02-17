@@ -1,5 +1,8 @@
 {
-    "numUsers": 2,
+    "users": {
+        "num": 4,
+        "discs": 20
+    },
     "discs": {
         "Innova": {
             "plastics": [
@@ -71,6 +74,15 @@
         "Money",
         "Shimmer",
         "Flag",
+        "Red",
+        "Blue",
+        "Green",
+        "Dots",
+        "Wonderbread",
+        "Yellow",
+        "Black",
+        "Rainbow",
+        "Gold",
         ""
     ],
     "stamps": [
@@ -94,7 +106,7 @@
         "Clear"
     ],
     "weight": {
-        "min": 100,
+        "min": 155,
         "max": 180
     }
 }
