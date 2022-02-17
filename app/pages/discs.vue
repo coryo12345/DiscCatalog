@@ -1,39 +1,36 @@
 <template>
-  <v-container>
-    <div class="d-flex align-center mb-4">
-      <h1>My Discs</h1>
-      <v-btn color="primary" class="ml-auto" @click="addDisc"
-        >Add Disc</v-btn
-      >
+  <v-container fluid>
+    <div v-if="!$auth.loggedIn">
+      You must sign in to view your discs. Sign in on the account page.
     </div>
-    <v-row v-if="loading">
-      <v-col 
-        v-for="n in 6"
-        :key="n"
-        cols="12"
-        sm="4"
-        md="3"
-      >
-        <v-skeleton-loader :loading="loading" type="card" class="mx-1" />
-      </v-col>
-    </v-row>
-    <v-row v-else>
-      <v-col
-        v-for="(disc, index) in discs"
-        :key="index"
-        cols="12"
-        sm="4"
-        md="3"
-      >
-        <DiscCard :disc="disc" @details="showDetails" />
-      </v-col>
-    </v-row>
-    <v-dialog v-model="addDiscForm" max-width="700">
-      <DiscForm :disc="dialogDisc" @update="updateDisc" />
-    </v-dialog>
-    <v-dialog v-model="discDetails" max-width="700">
-      <DiscDetail :disc="dialogDisc" @edit="editDiscCallback" />
-    </v-dialog>
+    <div v-else>
+      <div class="d-flex align-center mb-4">
+        <h1>My Discs</h1>
+        <v-btn color="primary" class="ml-auto" @click="addDisc">Add Disc</v-btn>
+      </div>
+      <v-row v-if="loading">
+        <v-col v-for="n in 6" :key="n" cols="12" sm="4" md="3">
+          <v-skeleton-loader :loading="loading" type="card" class="mx-1" />
+        </v-col>
+      </v-row>
+      <v-row v-else>
+        <v-col
+          v-for="(disc, index) in discs"
+          :key="index"
+          cols="12"
+          sm="4"
+          md="3"
+        >
+          <DiscCard :disc="disc" @details="showDetails" />
+        </v-col>
+      </v-row>
+      <v-dialog v-model="addDiscForm" max-width="700">
+        <DiscForm :disc="dialogDisc" @update="updateDisc" />
+      </v-dialog>
+      <v-dialog v-model="discDetails" max-width="700">
+        <DiscDetail :disc="dialogDisc" @edit="editDiscCallback" />
+      </v-dialog>
+    </div>
   </v-container>
 </template>
 
@@ -48,22 +45,34 @@ export default {
       loading: true,
       addDiscForm: false,
       dialogDisc: {},
-      discDetails: false
+      discDetails: false,
     };
   },
+  computed: {
+    showData() {
+      return this.$auth.loggedIn && !this.error;
+    },
+  },
   async created() {
-    this.discs = await this.$axios.$get(URLS.GET_DISCS);
-    // temp
-    this.discs.push(...[
-      { id: 0, brand: 'Innova', mold: 'Destroyer', plastic: 'Halo' },
-      { id: 1, brand: 'Innova', mold: 'Firebird', plastic: 'Champion' },
-      { id: 2, brand: 'Discraft', mold: 'Buzzz', plastic: 'Z' },
-      { id: 3, brand: 'Discraft', mold: 'Heat', plastic: 'ESP' },
-      { id: 4, brand: 'Discmania', mold: 'P2', plastic: 'D-line' },
-    ]);
+    if (this.$auth.loggedIn) {
+    await this.fetchDiscs();
+    }
     this.loading = false;
   },
   methods: {
+    async fetchDiscs() {
+      this.discs = await this.$axios.$get(URLS.GET_DISCS);
+      // temp
+      this.discs.push(
+        ...[
+          { id: 0, brand: 'Innova', mold: 'Destroyer', plastic: 'Halo' },
+          { id: 1, brand: 'Innova', mold: 'Firebird', plastic: 'Champion' },
+          { id: 2, brand: 'Discraft', mold: 'Buzzz', plastic: 'Z' },
+          { id: 3, brand: 'Discraft', mold: 'Heat', plastic: 'ESP' },
+          { id: 4, brand: 'Discmania', mold: 'P2', plastic: 'D-line' },
+        ]
+      );
+    },
     addDisc() {
       this.dialogDisc = {};
       this.addDiscForm = true;
@@ -89,7 +98,7 @@ export default {
       this.discs[idx] = disc;
       this.dialogDisc = this.discs[idx];
       this.addDiscForm = false;
-    }
+    },
   },
 };
 </script>

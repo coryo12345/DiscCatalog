@@ -15,6 +15,7 @@ const dcUserRow = function (req: Request, res: Response, next: Function) {
     const now = Math.floor(new Date().getTime() / 1000);
     if (now > userToken.exp) {
       res.sendStatus(401);
+      return;
     }
 
     // make sure row exists

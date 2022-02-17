@@ -1,0 +1,100 @@
+{
+    "numUsers": 2,
+    "discs": {
+        "Innova": {
+            "plastics": [
+                "Star",
+                "Champion",
+                "DX",
+                "KC Pro",
+                "Halo"
+            ],
+            "molds": [
+                "Destroyer",
+                "Roc",
+                "Roc3",
+                "Aviar",
+                "Firebird",
+                "Thunderbird",
+                "Teebird",
+                "Pig",
+                "Wraith"
+            ],
+            "runs": [
+                "Tour Series",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "Discraft": {
+            "plastics": [
+                "Z",
+                "ESP",
+                "X",
+                "Titanium",
+                "Big Z"
+            ],
+            "molds": [
+                "Buzzz",
+                "Undertaker",
+                "Luna",
+                "Roach",
+                "Malta",
+                "Anax",
+                "Zeus",
+                "Hades",
+                "Force"
+            ],
+            "runs": [
+                "Tour Series",
+                "Ledgestone",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "Discmania": {
+            "plastics": ["S-Line", "C-Line"],
+            "molds": ["P2", "PD2", "DD3", "MD1", "MD3", "FD", "Enigma", "Link"],
+            "runs": [""]
+        },
+        "Latitude 64": {
+            "plastics": ["Opto", "Glimmer", "Royal", "Eco"],
+            "molds": ["Compass", "Pure", "Keystone", "Ballista Pro", "Jade", "Explorer", "River"],
+            "runs": ["","","","","Tour Series"]
+        }
+    },
+    "foils": [
+        "Money",
+        "Shimmer",
+        "Flag",
+        ""
+    ],
+    "stamps": [
+        "Stock",
+        "Stock",
+        "Tour Series",
+        "Bar Stamp",
+        "Custom",
+        ""
+    ],
+    "colors": [
+        "Red",
+        "Blue",
+        "Green",
+        "Orange",
+        "Yellow",
+        "Pink",
+        "Purple",
+        "Black",
+        "White",
+        "Clear"
+    ],
+    "weight": {
+        "min": 100,
+        "max": 180
+    }
+}

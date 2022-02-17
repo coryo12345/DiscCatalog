@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row align="center" justify="space-around">
       <v-col dense cols="12" md="auto">
         <h1>Stores</h1>

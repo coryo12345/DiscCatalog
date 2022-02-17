@@ -1,5 +1,5 @@
 <template>
-  <v-container id="dc-account">
+  <v-container id="dc-account" fluid>
     <div class="d-block">
       <h1>Account</h1>
     </div>

@@ -24,7 +24,10 @@
       <HeaderLogin class="my-auto ml-auto" />
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-container v-if="error">
+        <h3>We're sorry, something went wrong...</h3>
+      </v-container>
+      <v-container v-else>
         <Nuxt />
       </v-container>
     </v-main>
@@ -42,6 +45,7 @@ export default {
       drawer: false,
       clipped: false,
       fixed: true,
+      error: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -73,6 +77,17 @@ export default {
       title: 'DiscCatalog',
     };
   },
+  watch: {
+    '$route'() {
+      this.error = false;
+    }
+  },
+  errorCaptured(err) {
+    this.error = true;
+    if (err.message.includes('401')) {
+      this.$auth.logout();
+    }
+  }
 };
 </script>
 
