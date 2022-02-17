@@ -8,7 +8,7 @@ const env = {
   CLIENT_ID: '',
   AUDIENCE: '',
 };
-let envObj
+let envObj;
 try {
   const envData = fs.readFileSync(envFile, 'utf-8');
   // override file exists
@@ -23,7 +23,7 @@ try {
 }
 
 // record only what we expect
-Object.keys(env).forEach(key => {
+Object.keys(env).forEach((key) => {
   env[key] = envObj[key];
 });
 

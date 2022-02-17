@@ -1,6 +1,6 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from 'vuetify/es5/util/colors';
 // eslint-disable-next-line import/default
-import env from './env'
+import env from './env';
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -41,7 +41,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
   ],
 
   auth: {
@@ -52,22 +52,25 @@ export default {
         domain: env.DOMAIN,
         clientId: env.CLIENT_ID,
         audience: env.AUDIENCE,
-      }
+      },
     },
     redirect: {
-      login: '/auth',
+      login: '/account',
       logout: '/',
-      callback: '/auth',
-      home: '/'
-    }
+      callback: '/account',
+      home: '/',
+    },
   },
 
   axios: {
-    proxy: true
+    proxy: true,
   },
 
   proxy: {
-    '/api/': { target: 'http://localhost:3001/api', pathRewrite: { '^/api/': '' } }
+    '/api/': {
+      target: 'http://localhost:3001/api',
+      pathRewrite: { '^/api/': '' },
+    },
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -105,4 +108,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-}
+};

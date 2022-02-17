@@ -1,53 +1,103 @@
 <template>
   <v-container class="main">
-    <h2>Add Disc</h2>
+    <h2>{{ title }}</h2>
     <hr class="mb-4" />
     <v-form ref="form" lazy-validation>
-    <v-row>
-      <v-col v-for="field in fields" :key="field.name" cols="12" sm="6" md="3">
-          <!-- TODO change input based on type -->
-        <v-text-field
-          v-model="disc[field.name]"
-          :label="field.name"
-          class="d-inline-block"
-          :rules="[required[field.required.toString()]]"
-          outlined
-          dense
-        />
-      </v-col>
-    </v-row>
-    <v-btn color="primary" @click="submit">Add</v-btn>
+      <v-row>
+        <v-col
+          v-for="field in fields"
+          :key="field.name"
+          cols="12"
+          sm="6"
+          md="3"
+        >
+          <v-text-field
+            v-if="field.type === 'String'"
+            v-model="internalDisc[field.name]"
+            :label="field.name"
+            class="d-inline-block"
+            :rules="[required[field.required.toString()]]"
+            outlined
+            dense
+          />
+          <v-text-field
+            v-else-if="field.type === 'Number'"
+            v-model="internalDisc[field.name]"
+            type="number"
+            min="100"
+            max="200"
+            :label="field.name"
+            class="d-inline-block"
+            :rules="[required[field.required.toString()]]"
+            outlined
+            dense
+          />
+          <v-checkbox
+            v-else-if="field.type === 'Boolean'"
+            v-model="internalDisc[field.name]"
+            :label="field.name"
+            class="d-inline-block"
+          />
+        </v-col>
+      </v-row>
+      <v-btn color="primary" @click="submit">{{ submitText }}</v-btn>
     </v-form>
-    <p v-if="error" class="error--text text-center mt-2">There was a problem submitting your request</p>
+    <p v-if="error" class="error--text text-center mt-2">
+      There was a problem submitting your request
+    </p>
   </v-container>
 </template>
 
 <script>
-import { URLS } from '@/constants'
+import { URLS } from '@/constants';
 
 // name: type
 const FIELDS = {
-  'Brand': 'String',
-  'Mold': 'String',
-  'Plastic?': 'String',
-  'Weight?': 'Int',
-  'Run?': 'String',
-  'Foil?': 'String',
-  'Stamp?': 'String',
-  'Color?': 'String',
-  'Public?': 'Boolean'
-}
+  brand: 'String',
+  mold: 'String',
+  'plastic?': 'String',
+  'weight?': 'Number',
+  'run?': 'String',
+  'foil?': 'String',
+  'stamp?': 'String',
+  'color?': 'String',
+  'public?': 'Boolean',
+};
 
 export default {
+  props: {
+    disc: {
+      type: Object,
+      required: false,
+      default: () => {},
+    }
+  },
   data() {
     return {
-      disc: {},
+      internalDisc: {},
+      editing: false,
       fields: [],
       required: {
-          'true': (val) => !!val || 'This field is required',
-          'false': (_) => true
+        true: (val) => !!val || 'This field is required',
+        false: (_) => true,
       },
-      error: false
+      error: false,
+    };
+  },
+  computed: {
+    title() {
+      return this.editing ? 'Edit Disc' : 'Add Disc';
+    },
+    submitText() {
+      return this.editing ? 'Save' : 'Add';
+    }
+  },
+  watch: {
+    disc: {
+      handler(val, _) {
+        this.discPropWatcher(val);
+      },
+      deep: true
     }
   },
   created() {
@@ -55,27 +105,47 @@ export default {
       this.fields.push({
         name: key.replaceAll('?', ''),
         type: FIELDS[key],
-        required: !key.includes('?')
-      })
-      this.disc[key] = undefined
-    })
+        required: !key.includes('?'),
+      });
+    });
+    this.discPropWatcher(this.disc);
   },
   methods: {
     async submit() {
       if (this.$refs.form.validate()) {
         try {
-          await this.$axios.$post(URLS.ADD_DISC, this.disc);
+          if (this.editing) {
+            // TODO 
+            // post edit disc
+            this.$emit('update', this.internalDisc);
+          } else {
+            await this.$axios.$post(URLS.ADD_DISC, this.internalDisc);
+          }
         } catch (err) {
           this.error = true;
         }
       }
+    },
+    discPropWatcher(val) {
+      if (Object.keys(val).length > 0) {
+        // we were given a disc - edit mode
+        this.internalDisc = {...val};
+        this.editing = true;
+      } else {
+        this.internalDisc = {};
+        this.editing = false;
+      }
     }
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
 .main {
   background: var(--v-background-base);
+}
+
+.main >>> label.v-label {
+  text-transform: capitalize;
 }
 </style>

@@ -10,6 +10,6 @@
 
 <script>
 export default {
-  name: 'DiscsPage'
-}
+  name: 'DiscsPage',
+};
 </script>

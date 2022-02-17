@@ -19,7 +19,11 @@
       </v-col>
     </v-row>
     <div v-if="loading">
-      <v-skeleton-loader :loading="loading" />
+      <v-row>
+        <v-col v-for="n in 10" :key="n">
+          <v-skeleton-loader :loading="loading" type="button" />
+        </v-col>
+      </v-row>
     </div>
     <div v-else>
       <v-container v-if="showManufacturers">
@@ -93,12 +97,12 @@
 </template>
 
 <script>
-import { URLS } from '@/constants/'
+import { URLS } from '@/constants/';
 
 function storeSort(a, b) {
-  if (a.display_name < b.display_name) return -1
-  else if (a.display_name > b.display_name) return 1
-  else return 0
+  if (a.display_name < b.display_name) return -1;
+  else if (a.display_name > b.display_name) return 1;
+  else return 0;
 }
 
 export default {
@@ -111,11 +115,11 @@ export default {
       showManufacturers: true,
       showRetailers: true,
       showPlayers: true,
-    }
+    };
   },
   async fetch() {
-    this.stores = await this.$axios.$get(URLS.GET_STORES)
-    this.loading = false
+    this.stores = await this.$axios.$get(URLS.GET_STORES);
+    this.loading = false;
   },
   computed: {
     manufacturers() {
@@ -124,7 +128,7 @@ export default {
         .filter((s) =>
           s.display_name.toLowerCase().includes(this.search.toLowerCase())
         )
-        .sort(storeSort)
+        .sort(storeSort);
     },
     retailers() {
       return this.stores
@@ -132,7 +136,7 @@ export default {
         .filter((s) =>
           s.display_name.toLowerCase().includes(this.search.toLowerCase())
         )
-        .sort(storeSort)
+        .sort(storeSort);
     },
     players() {
       return this.stores
@@ -140,10 +144,10 @@ export default {
         .filter((s) =>
           s.display_name.toLowerCase().includes(this.search.toLowerCase())
         )
-        .sort(storeSort)
+        .sort(storeSort);
     },
   },
-}
+};
 </script>
 
 <style scoped>

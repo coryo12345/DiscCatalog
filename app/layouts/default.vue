@@ -71,9 +71,9 @@ export default {
       ],
       right: true,
       title: 'DiscCatalog',
-    }
+    };
   },
-}
+};
 </script>
 
 <style scoped>

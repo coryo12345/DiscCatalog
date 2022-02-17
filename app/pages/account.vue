@@ -19,14 +19,16 @@
         outlined
         dense
       />
-      <p class="d-inline-block accent--text ml-2">Display name for public posts</p>
+      <p class="d-inline-block accent--text ml-2">
+        Display name for public posts
+      </p>
       <v-btn color="primary" class="d-block" @click="saveSettings">Save</v-btn>
     </div>
   </v-container>
 </template>
 
 <script>
-import { URLS } from '@/constants/'
+import { URLS } from '@/constants/';
 
 export default {
   name: 'AccountPage',
@@ -34,25 +36,27 @@ export default {
     return {
       loading: true,
       displayName: '',
-    }
+    };
   },
   async created() {
     // check if logged in
     if (this.$auth.loggedIn) {
-      const userData = await this.$axios.$get(URLS.CURRENT_USER)
+      const userData = await this.$axios.$get(URLS.CURRENT_USER);
       this.displayName = userData.displayName;
       this.loading = false;
     } else {
       // take to login page if not
-      this.$auth.loginWith('auth0')
+      this.$auth.loginWith('auth0');
     }
   },
   methods: {
     saveSettings() {
-      this.$axios.$post(URLS.UPDATE_CURRENT_USER, { displayName: this.displayName });
+      this.$axios.$post(URLS.UPDATE_CURRENT_USER, {
+        displayName: this.displayName,
+      });
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

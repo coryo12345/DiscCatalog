@@ -1,7 +1,7 @@
 <template>
-  <v-card class="max-height">
-    <v-card-title class="word-break">
-      {{ name }}
+  <v-card class="disc-card" @click="showDetails">
+    <v-card-title class="word-break d-flex justify-space-between">
+      <span>{{ name }}</span>
     </v-card-title>
     <v-card-subtitle>
       {{ disc.brand }}
@@ -32,10 +32,17 @@ export default {
   },
   computed: {
     name() {
-      return `${this.disc.plastic} ${this.disc.mold}`
+      const pl = this.disc.plastic ? this.disc.plastic : '';
+      const mld = this.disc.mold ? this.disc.mold : '';
+      return `${pl} ${mld}`.trim();
     },
   },
-}
+  methods: {
+    showDetails() {
+      this.$emit('details', this.disc);
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -43,7 +50,7 @@ export default {
   word-break: break-word;
 }
 
-.max-height {
+.disc-card {
   height: 100%;
 }
 </style>

@@ -5,9 +5,13 @@ import { DCRequest } from '../types/DCHttp';
 const prisma = prismaAccessor();
 const router = express.Router();
 
-// TODO make this only discs for the current user
-router.get('/discs', async (_, res) => {
-  const result = await prisma.disc.findMany();
+router.get('/discs', dcUserRow, async (req, res) => {
+  const userId = (req as DCRequest).disc.id;
+  const result = await prisma.disc.findMany({
+    where: {
+      userId: userId
+    }
+  });
   res.json(result);
 });
 

@@ -5,9 +5,7 @@
   <v-btn v-else-if="$auth.loggedIn" :to="'/account'" color="text">
     My Account
   </v-btn>
-  <v-btn v-else @click="login">
-    Sign In
-  </v-btn>
+  <v-btn v-else @click="login"> Sign In </v-btn>
 </template>
 
 <script>
@@ -17,8 +15,8 @@ export default {
       this.$auth.loginWith('auth0');
     },
     logout() {
-      this.$auth.logout()
-    }
-  }
-}
+      this.$auth.logout();
+    },
+  },
+};
 </script>
