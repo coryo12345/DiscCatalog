@@ -1,9 +1,6 @@
 <template>
-  <v-btn v-if="$auth.loggedIn && $route.name === 'account'" @click="logout">
+  <v-btn v-if="$auth.loggedIn" @click="logout">
     Log Out
-  </v-btn>
-  <v-btn v-else-if="$auth.loggedIn" :to="'/account'" color="text">
-    My Account
   </v-btn>
   <v-btn v-else @click="login"> Sign In </v-btn>
 </template>
