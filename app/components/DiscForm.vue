@@ -61,7 +61,7 @@ const FIELDS = {
   'foil?': 'String',
   'stamp?': 'String',
   'color?': 'String',
-  'public?': 'Boolean',
+  'shared?': 'Boolean',
 };
 
 export default {

@@ -1,15 +1,12 @@
 # DiscCatalog
 
 ## TODO
-* update store seed data title to use url if home or too long
-* seed disc data
+* update store seed data title to use url if home or too long (or empty)
 * test create disc endpoint
-* finish create disc form
 * edit disc endpoint
-* edit disc form (reuse?)
-* get public discs 
-* view public discs page
-* public discs skeleton loader
+* browse pagination
+* browse show display name
+* Home page
 
 ## Additions
 * image storage for discs

@@ -5,6 +5,17 @@ import { DCRequest } from '../types/DCHttp';
 const prisma = prismaAccessor();
 const router = express.Router();
 
+router.get('/discs/all', async (_, res) => {
+  // TODO join user to get displayname instead of id
+  // TODO pagination
+  const result = await prisma.disc.findMany({
+    where: {
+      shared: true
+    }
+  });
+  res.json(result);
+});
+
 router.get('/discs', dcUserRow, async (req, res) => {
   const userId = (req as DCRequest).disc.id;
   const result = await prisma.disc.findMany({
@@ -51,6 +62,7 @@ router.post('/add', dcUserRow, async (req, res) => {
   }
 });
 
-// TODO get public discs
+// TODO disc update endpoint
+// must verify user owns this disc
 
 export default router;

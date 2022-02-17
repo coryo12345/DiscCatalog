@@ -6,7 +6,7 @@
       <span class="capital left-col pr-1">{{ attr }}</span>
       <span>{{ disc[attr] }}</span>
     </div>
-    <div class="d-flex">
+    <div v-if="editable" class="d-flex">
       <v-btn class="ml-auto" @click="edit">Edit</v-btn>
     </div>
   </v-container>
@@ -18,6 +18,11 @@ export default {
     disc: {
       type: Object,
       required: true
+    },
+    editable: {
+      type: Boolean,
+      required: false,
+      default: () => false
     }
   },
   computed: {

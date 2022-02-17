@@ -20,11 +20,11 @@ readFile(SEED_DATA_FILE, { encoding: 'utf8' }).then(async (SEED_DATA_RAW) => {
       },
       update: {
         authId: `seeduser${i + 1}`,
-        displayName: '',
+        displayName: `seeduser${i + 1}`,
       },
       create: {
         authId: `seeduser${i + 1}`,
-        displayName: '',
+        displayName: `seeduser${i + 1}`,
       },
     });
   }

@@ -28,7 +28,7 @@
         <DiscForm :disc="dialogDisc" @update="updateDisc" />
       </v-dialog>
       <v-dialog v-model="discDetails" max-width="700">
-        <DiscDetail :disc="dialogDisc" @edit="editDiscCallback" />
+        <DiscDetail :disc="dialogDisc" :editable="true" @edit="editDiscCallback" />
       </v-dialog>
     </div>
   </v-container>
@@ -55,23 +55,13 @@ export default {
   },
   async created() {
     if (this.$auth.loggedIn) {
-    await this.fetchDiscs();
+      await this.fetchDiscs();
     }
     this.loading = false;
   },
   methods: {
     async fetchDiscs() {
       this.discs = await this.$axios.$get(URLS.GET_DISCS);
-      // temp
-      this.discs.push(
-        ...[
-          { id: 0, brand: 'Innova', mold: 'Destroyer', plastic: 'Halo' },
-          { id: 1, brand: 'Innova', mold: 'Firebird', plastic: 'Champion' },
-          { id: 2, brand: 'Discraft', mold: 'Buzzz', plastic: 'Z' },
-          { id: 3, brand: 'Discraft', mold: 'Heat', plastic: 'ESP' },
-          { id: 4, brand: 'Discmania', mold: 'P2', plastic: 'D-line' },
-        ]
-      );
     },
     addDisc() {
       this.dialogDisc = {};
