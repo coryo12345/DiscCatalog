@@ -60,9 +60,9 @@ router.post('/add', dcUserRow, async (req, res) => {
         foil: disc.foil,
         stamp: disc.stamp,
         color: disc.color,
+        shared: disc.shared,
       }
     });
-    // TODO test this
     await prisma.discMeta.create({
       select: {id: true},
       data: {
@@ -77,7 +77,49 @@ router.post('/add', dcUserRow, async (req, res) => {
   }
 });
 
-// TODO disc update endpoint
-// must verify user owns this disc
+router.post('/update', dcUserRow, async (req, res) => {
+  const userId = (req as DCRequest).disc.id;
+  const disc = req.body;
+  if (!disc) {
+    res.sendStatus(400);
+    return;
+  }
+  try {
+    // make sure the user owns this disc
+    const row = await prisma.disc.findFirst({
+      select: { userId: true, id: true },
+      where: { id: disc.id, userId: userId }
+    });
+    if (row === null) {
+      // nope.
+      res.sendStatus(403);
+      return;
+    }
+
+    // update
+    await prisma.disc.update({
+      select: {id: true},
+      where: {
+        id: disc.id
+      },
+      data: {
+        userId: userId,
+        brand: disc.brand,
+        mold: disc.mold,
+        plastic: disc.plastic,
+        weight: disc.weight,
+        run: disc.run,
+        foil: disc.foil,
+        stamp: disc.stamp,
+        color: disc.color,
+        shared: disc.shared,
+      }
+    });
+    res.json({});
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+});
 
 export default router;

@@ -115,8 +115,7 @@ export default {
       if (this.$refs.form.validate()) {
         try {
           if (this.editing) {
-            // TODO 
-            // post edit disc
+            await this.$axios.$post(URLS.UPDATE_DISC, this.internalDisc);
             this.$emit('update', this.internalDisc);
           } else {
             await this.$axios.$post(URLS.ADD_DISC, this.internalDisc);

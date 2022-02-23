@@ -24,6 +24,7 @@
       </p>
       <v-btn color="primary" class="d-block" @click="saveSettings">Save</v-btn>
     </div>
+    <v-alert v-if="error" color="error">Something went wrong. Try again later.</v-alert>
   </v-container>
 </template>
 
@@ -36,6 +37,7 @@ export default {
     return {
       loading: true,
       displayName: '',
+      error: false
     };
   },
   async created() {
@@ -50,10 +52,15 @@ export default {
     }
   },
   methods: {
-    saveSettings() {
-      this.$axios.$post(URLS.UPDATE_CURRENT_USER, {
-        displayName: this.displayName,
-      });
+    async saveSettings() {
+      try {
+        await this.$axios.$post(URLS.UPDATE_CURRENT_USER, {
+          displayName: this.displayName,
+        });
+        this.error = false;
+      } catch (err) {
+        this.error = true;
+      }
     },
   },
 };
