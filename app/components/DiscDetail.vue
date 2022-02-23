@@ -34,7 +34,9 @@ export default {
     attributes() {
       return Object.keys(this.disc).filter(x => 
         !['image', 'id', 'userid', 'user'].includes(x.toLowerCase()) &&
-        this.disc[x] !== undefined
+        this.disc[x] !== undefined &&
+        this.disc[x] !== null &&
+        this.disc[x] !== ''
       );
     }
   },
