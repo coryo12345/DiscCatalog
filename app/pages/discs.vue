@@ -6,7 +6,14 @@
     <div v-else>
       <div class="d-flex align-center mb-4">
         <h1>My Discs</h1>
-        <v-btn color="primary" class="ml-auto" @click="addDisc">Add Disc</v-btn>
+        <v-btn color="primary" class="ml-auto mr-2" large @click="addDisc"
+          >Add Disc</v-btn
+        >
+        <DiscSearch
+          v-model="shownDiscs"
+          :discs="discs"
+          :attributes="['brand', 'mold', 'plastic', 'color']"
+        />
       </div>
       <v-row v-if="loading">
         <v-col v-for="n in 6" :key="n" cols="12" sm="4" md="3">
@@ -15,7 +22,7 @@
       </v-row>
       <v-row v-else>
         <v-col
-          v-for="(disc, index) in discs"
+          v-for="(disc, index) in shownDiscs"
           :key="index"
           cols="12"
           sm="4"
@@ -25,10 +32,18 @@
         </v-col>
       </v-row>
       <v-dialog v-model="addDiscForm" max-width="700">
-        <DiscForm :disc="dialogDisc" @update="updateDisc" @create="createDisc" />
+        <DiscForm
+          :disc="dialogDisc"
+          @update="updateDisc"
+          @create="createDisc"
+        />
       </v-dialog>
       <v-dialog v-model="discDetails" max-width="700">
-        <DiscDetail :disc="dialogDisc" :editable="true" @edit="editDiscCallback" />
+        <DiscDetail
+          :disc="dialogDisc"
+          :editable="true"
+          @edit="editDiscCallback"
+        />
       </v-dialog>
     </div>
   </v-container>
@@ -42,6 +57,7 @@ export default {
   data() {
     return {
       discs: [],
+      shownDiscs: [],
       loading: true,
       addDiscForm: false,
       dialogDisc: {},

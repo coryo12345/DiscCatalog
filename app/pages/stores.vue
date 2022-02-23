@@ -1,23 +1,24 @@
 <template>
   <v-container fluid>
-    <v-row align="center" justify="space-around">
-      <v-col dense cols="12" md="auto">
-        <h1>Stores</h1>
-      </v-col>
-      <v-spacer />
-      <v-col cols="4" sm="3" md="auto">
-        <v-checkbox v-model="showManufacturers" label="Manufacturers" />
-      </v-col>
-      <v-col cols="4" sm="3" md="auto">
-        <v-checkbox v-model="showRetailers" label="Retailers" />
-      </v-col>
-      <v-col cols="4" sm="3" md="auto">
-        <v-checkbox v-model="showPlayers" label="Players" />
-      </v-col>
-      <v-col cols="12" sm="3" md="auto">
-        <v-text-field v-model="search" placeholder="Search" hide-details solo />
-      </v-col>
-    </v-row>
+    <div class="d-flex align-center justify-space-between wrap">
+      <h1 class="d-block">Stores</h1>
+      <div class="d-flex wrap">
+        <v-checkbox
+          v-model="showManufacturers"
+          label="Manufacturers"
+          class="mr-4"
+        />
+        <v-checkbox v-model="showRetailers" label="Retailers" class="mr-4" />
+        <v-checkbox v-model="showPlayers" label="Players" class="mr-4" />
+        <v-text-field
+          v-model="search"
+          placeholder="Search"
+          class="text-width my-auto"
+          hide-details
+          solo
+        />
+      </div>
+    </div>
     <div v-if="loading">
       <v-row>
         <v-col v-for="n in 10" :key="n">
@@ -156,5 +157,13 @@ export default {
   border-radius: 0.5rem;
   background-color: var(--v-primary-base);
   text-decoration: none;
+}
+
+.text-width {
+  max-width: 18em;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 </style>

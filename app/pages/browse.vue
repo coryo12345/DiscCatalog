@@ -1,6 +1,14 @@
 <template>
   <v-container fluid>
-    <h1>Browse Discs</h1>
+    <div class="d-flex">
+      <h1>Browse Discs</h1>
+      <DiscSearch
+          v-model="shownDiscs"
+          :discs="discs"
+          :attributes="['brand', 'mold', 'plastic', 'color']"
+          class="ml-auto"
+        />
+    </div>
     <p>
       These are discs that other users have shared. You can share your discs by
       checking the shared box for any disc.
@@ -12,7 +20,7 @@
     </v-row>
     <v-row v-else>
       <v-col
-        v-for="(disc, index) in discs"
+        v-for="(disc, index) in shownDiscs"
         :key="index"
         cols="12"
         sm="4"
@@ -35,6 +43,7 @@ export default {
   data() {
     return {
       discs: [],
+      shownDiscs: [],
       dialogDisc: {},
       loading: true,
       discDetails: false
